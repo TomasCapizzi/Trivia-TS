@@ -1,8 +1,11 @@
 import {useEffect, useRef, useState} from "react";
 
-import { User } from "../Interfaces/User";
 import { database } from "../Firebase/users";
 import styles from './login.module.css'
+
+//import { User } from "../Interfaces/User";
+
+
 
 type Props = {
     setIsLog: React.Dispatch<React.SetStateAction<boolean>>,
@@ -10,7 +13,7 @@ type Props = {
 }
 
 export default function Login({setIsLog, setActualUser}: Props){
-    const [users, setUsers] = useState<User[]>([])
+    const [users, setUsers] = useState<{ [x: string]: any; }[]>([])
     const [errorState, setErrorState] = useState(false);
     const [error, setError] = useState('');
 

@@ -10,7 +10,7 @@ const useGetScores = ({setScores, setHandler, getUserScores}: Props) => {
 
     async function getScoreList(){
         const scoreData = await database.collection('scores');
-        scoreData.get().then((query)=> setScores(query.docs.map((doc: any)=>{
+        scoreData.get().then((query)=> setScores(query.docs.map((doc)=>{
             return {...doc.data()}
         })))        
         setHandler(true);

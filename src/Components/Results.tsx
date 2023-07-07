@@ -7,11 +7,9 @@ type Props = {
     incorrect: string[]
     changeQuestion: () => void
     incrementScore: () => void
-    score: number
-    listOfQuestions: number
 }
 
-export default function Results({correct, incorrect, changeQuestion, incrementScore,score, listOfQuestions}: Props){
+export default function Results({correct, incorrect, changeQuestion, incrementScore}: Props){
 
     const [results, setResults] = useState<string[]>([])
 
@@ -33,7 +31,7 @@ export default function Results({correct, incorrect, changeQuestion, incrementSc
         <div className={styles.questionOptions}>
             {
                 results.length ? 
-                results.sort(item => Math.random()-0.5).map(res => <button onClick={(e)=> {
+                results.sort(() => Math.random()-0.5).map(res => <button onClick={(e)=> {
                     changeQuestion()
                     compareResult(e.target)
                 }} key={res} className={styles.btn} >{res}</button>)

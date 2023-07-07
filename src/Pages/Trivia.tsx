@@ -38,7 +38,7 @@ export default function Trivia({actualUser, setIsLog}: Props){
       const scoreItem = {
         score: score,
         user: actualUser,
-        mode: modeRef.current.value,
+        mode: modeRef.current ? modeRef.current.value : '',
         date: new Date()
       }
       scoreData.add(scoreItem);
@@ -65,7 +65,7 @@ export default function Trivia({actualUser, setIsLog}: Props){
                 <div className={styles.question}>   
                   {
                     trivia.length ? 
-                    <Question question={trivia[currentQuestion]} changeQuestion={changeQuestion}  incrementScore={incrementScore} score={score}  listOfQuestions={listOfQuestions}/>
+                    <Question question={trivia[currentQuestion]} changeQuestion={changeQuestion}  incrementScore={incrementScore}/>
                     : <Spinner/>
                   }
                 </div>

@@ -32,7 +32,7 @@ export default function ScoreList({actualUser}: Props){
             <article className={styles.scores}>
                 { userScore.length ?
                     userScore.map(
-                        item => <p key={item.date}>{item.score}</p>
+                        (item, pos) => <p key={pos}>{item.score}</p>
                     )
                     :
                     null

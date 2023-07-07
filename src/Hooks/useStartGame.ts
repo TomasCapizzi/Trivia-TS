@@ -9,9 +9,9 @@ type Props = {
 const useStartGame = ({modeRef, categoryRef, totalRef, totalQuestions, getQuestions, setHandler}: Props) => {
 
     function startGame(){
-        const mode = modeRef.current.value;
-        const category = categoryRef.current.value;
-        const total = Number(totalRef.current.value);
+        const mode = modeRef.current ? modeRef.current.value : '';
+        const category = categoryRef.current ? categoryRef.current.value : '';
+        const total = Number(totalRef.current ? totalRef.current.value : 0);
         totalQuestions(total);
         const url = `https://opentdb.com/api.php?amount=${total}&category=${category}&difficulty=${mode}&type=multiple`
         getQuestions(url);
