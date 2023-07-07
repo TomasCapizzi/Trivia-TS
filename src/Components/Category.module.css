@@ -1,0 +1,12 @@
+select{
+    border: none;
+    padding: 10px;
+    border-radius:13px;
+    background-color: #FFD8BE;
+    color: #9381FF;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+}
+option{
+    background-color: #FFD8BE;
+}
